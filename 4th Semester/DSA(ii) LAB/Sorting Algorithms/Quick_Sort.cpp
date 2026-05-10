@@ -5,22 +5,24 @@
 using namespace std;
 
 int pivotPartition(int a[], int low, int high){
-    int p = low - 1;
 
-    for(int i=low;i<high;i++){
-        if( a[i] < a[high] )
-            swap(a[i], a[++p]);
+    int pivot = a[high];
+    int i = low - 1;
+
+    for(int j=low; j<high; j++){
+        if( a[j] < pivot )
+            swap(a[j], a[++i]);
     }
 
-    swap(a[++p], a[high]);
-    return p;
+    swap(a[++i], a[high]);
+    return i;
 }
 
 void quickSort( int a[], int low, int high ){
     if(low < high){
-        int pivot = pivotPartition(a, low, high);
-        quickSort(a, low, pivot-1);
-        quickSort(a, pivot+1, high);
+        int pi = pivotPartition(a, low, high);
+        quickSort(a, low, pi - 1);
+        quickSort(a, pi + 1, high);
     }
 }
 
