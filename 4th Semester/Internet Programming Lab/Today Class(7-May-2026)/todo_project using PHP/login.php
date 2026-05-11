@@ -1,7 +1,9 @@
 <?php
 session_start();
 include 'includes/db.php';
-
+if (!isset($conn)) {
+    die("conn not found");
+}
 if(isset($_POST['login'])){
     $username = $_POST['username'];
     $password = md5($_POST['password']);

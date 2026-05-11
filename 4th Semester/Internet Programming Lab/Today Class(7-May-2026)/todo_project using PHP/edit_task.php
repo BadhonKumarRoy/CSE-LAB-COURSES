@@ -1,7 +1,9 @@
 <?php
 session_start();
 include 'includes/db.php';
-
+if (!isset($conn)) {
+    die("conn not found");
+}
 $id = $_GET['id'];
 
 $result = mysqli_query($conn,
