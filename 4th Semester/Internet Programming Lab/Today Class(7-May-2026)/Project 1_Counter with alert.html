@@ -1,0 +1,85 @@
+<!DOCTYPE html>
+<html>
+<body>
+
+<h1>JavaScript Project</h1>
+<h2>Counter</h2>
+
+<p id="count" style="font-size:40px;">0</p>
+
+<button onclick="increaseCount()">+</button>
+<button onclick="decreaseCount()">-</button>
+<button onclick="resetCount()">Reset</button>
+<button onclick="saveCount()">Save</button>
+<button onclick="loadCount()">Load</button>
+
+<script>
+
+// Declare the counter
+let count = 10;
+
+// Load the counter when the page opens
+loadCount();
+
+// Function to display the counter
+function updateCount() {
+  document.getElementById("count").innerHTML = count;
+}
+
+// Function to increase the counter
+function increaseCount() {
+  count++;
+  updateCount();
+
+  // Alert message
+  alert("Counter increased to " + count);
+}
+
+// Function to decrease the counter
+function decreaseCount() {
+  if (count > 0) {
+    count--;
+    updateCount();
+
+    // Alert message
+    alert("Counter decreased to " + count);
+  } else {
+    alert("Counter cannot go below 0");
+  }
+}
+
+// Function to reset the counter
+function resetCount() {
+  count = 10;
+  updateCount();
+
+  // Alert message
+  alert("Counter has been reset");
+}
+
+// Function to save the counter
+function saveCount() {
+  localStorage.setItem("count", count);
+
+  // Alert message
+  alert("Counter saved successfully");
+}
+
+// Function to load the counter
+function loadCount() {
+  let saved = localStorage.getItem("count");
+
+  if (saved !== null) {
+    count = Number(saved);
+    alert("Saved counter loaded");
+  } else {
+    alert("No saved counter found");
+  }
+
+  updateCount();
+}
+
+</script>
+
+</body>
+</html>
