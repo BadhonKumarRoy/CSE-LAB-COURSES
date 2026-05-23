@@ -1,3 +1,6 @@
+// Fibonacci using Dynamic Programming (Memoization)
+// Stores already computed values in an array to avoid повтор calculations in recursion
+// Time Complexity: O(n), Space Complexity: O(n)
 #include <iostream>
 using namespace std;
 
