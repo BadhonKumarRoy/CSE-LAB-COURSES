@@ -114,24 +114,31 @@ Empirical results measured on an active board position:
 
 ## 💻 7. Installation & How to Run
 
-### Step 1: Open Terminal in VS Code
-Ensure you are in the project directory:
-```powershell
-cd "E:\UITS\CSE-LAB-COURSES\5th Semester\Lab\Artificial Intelligence Lab\Project\Connect_Four"
+### Step 1: Open Terminal in Project Directory
+Open your terminal or command prompt inside the `Connect_Four` project folder:
+```bash
+cd Connect_Four
 ```
 
 ### Step 2: Activate Virtual Environment
 ```powershell
+# On Windows (PowerShell)
 .\.venv\Scripts\Activate.ps1
+
+# On Windows (Command Prompt - CMD)
+.\.venv\Scripts\activate.bat
+
+# On macOS / Linux
+source .venv/bin/activate
 ```
 
-### Step 3: Install Pygame (if not already installed)
-```powershell
+### Step 3: Install Dependencies
+```bash
 pip install pygame
 ```
 
 ### Step 4: Run the Game
-```powershell
+```bash
 python main.py
 ```
 
