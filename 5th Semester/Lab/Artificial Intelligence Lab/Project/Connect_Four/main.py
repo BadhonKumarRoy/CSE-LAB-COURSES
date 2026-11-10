@@ -1,16 +1,3 @@
-"""
-main.py - Connect Four with Minimax AI and Modern Pygame UI.
-Features:
-- See-through gravity drop animation through board slots
-- Glossy 5-layer sphere discs with specular highlights
-- Non-overlapping, pixel-perfect modern side dashboard
-- Interactive difficulty selector: Easy (2), Medium (4), Hard (5)
-- Real-time turn indicator with vector status discs (no broken emoji glyphs)
-- Redesigned modern buttons with hover transitions and pulse alert
-- Interactive Minimax vs Alpha-Beta Pruning comparison modal
-- Keyboard shortcuts: R (restart), 1-3 (difficulty), C (compare), ESC (quit)
-"""
-
 import sys
 import math
 import pygame
@@ -86,7 +73,6 @@ class ConnectFourApp:
     def _create_rack_surface(self):
         """
         Creates a rack surface with transparent holes.
-        Falling discs drawn behind this surface will show through the circular holes.
         """
         surf = pygame.Surface((BOARD_W, BOARD_H), pygame.SRCALPHA)
         surf.fill((*C_RACK, 255))
@@ -267,7 +253,7 @@ class ConnectFourApp:
         self.screen.blit(guide_line, (cx - 1, HEADER_H))
 
     # ─────────────────────────────────────────────────────────
-    # Redesigned Modern Side Panel (Clean, Pixel-Perfect Layout)
+    # Redesigned Side Panel (Clean, Pixel-Perfect Layout)
     # ─────────────────────────────────────────────────────────
     def draw_side_panel(self):
         bx = BOARD_W + 16        # 646 px

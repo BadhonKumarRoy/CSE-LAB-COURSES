@@ -1,7 +1,3 @@
-"""
-utils.py - Configuration, colors, and modern Button component for Connect Four AI.
-"""
-
 import pygame
 import math
 
@@ -29,7 +25,7 @@ AI    = 2   # Yellow
 DIFFICULTIES = {"Easy": 2, "Medium": 3, "Hard": 5}
 
 # ─────────────────────────────────────────────────────────────
-# MODERN COLOR PALETTE
+# COLOR PALETTE
 # ─────────────────────────────────────────────────────────────
 C_BG          = (13, 17, 28)       # Deep slate canvas
 C_PANEL       = (18, 24, 38)       # Side panel background
@@ -60,7 +56,7 @@ C_WHITE       = (248, 250, 252)
 C_MUTED       = (148, 163, 184)
 C_ACCENT      = (96, 165, 250)     # Sky blue
 
-# Modern Action Button Colors
+# Action Button Colors
 C_BTN_GREEN       = (16, 165, 105)
 C_BTN_GREEN_H     = (22, 195, 125)
 C_BTN_GREEN_BORDER = (5, 130, 80)
@@ -94,13 +90,10 @@ def lerp_color(c1, c2, t):
 
 
 # ─────────────────────────────────────────────────────────────
-# MODERN BUTTON COMPONENT
+# BUTTON COMPONENT
 # ─────────────────────────────────────────────────────────────
 class Button:
-    """
-    Clean, modern flat-styled button with smooth hover animation,
-    crisp 1px borders, and optional breathing pulse animation.
-    """
+
     SPEED = 0.18
 
     def __init__(self, rect, text,

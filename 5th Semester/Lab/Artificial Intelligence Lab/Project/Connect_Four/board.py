@@ -1,14 +1,8 @@
-"""
-board.py - Connect Four Board Logic.
-Kept simple, clear, and easy to explain during lab viva/defense.
-"""
-
 from utils import ROWS, COLS, EMPTY, HUMAN, AI
 
 
 def create_board():
     """
-    Creates a 6x7 grid initialized with zeros (EMPTY).
     Row 0 is the TOP row, Row 5 is the BOTTOM row.
     """
     return [[EMPTY for _ in range(COLS)] for _ in range(ROWS)]
@@ -16,7 +10,6 @@ def create_board():
 
 def is_valid_location(board, col):
     """
-    Checks if a column has room for at least one more disc.
     Returns True if the top row (row 0) is empty.
     """
     if 0 <= col < COLS:
@@ -26,8 +19,6 @@ def is_valid_location(board, col):
 
 def get_next_open_row(board, col):
     """
-    Simulates gravity: finds the lowest open row in the selected column.
-    Starts from row 5 (bottom) and moves upwards to row 0.
     Returns the row index, or None if the column is full.
     """
     for r in range(ROWS - 1, -1, -1):
@@ -67,17 +58,12 @@ def get_valid_moves(board, center_first=True):
 
 
 def is_board_full(board):
-    """Returns True if every column is full (draw condition)."""
+    
     return all(board[0][c] != EMPTY for c in range(COLS))
 
 
 def check_winner(board, player):
-    """
-    Checks if the specified player has 4 discs in a row:
-    - Horizontally
-    - Vertically
-    - Diagonally (down-right and up-right)
-    """
+    
     # 1. Horizontal Check (4 consecutive discs in any row)
     for r in range(ROWS):
         for c in range(COLS - 3):
