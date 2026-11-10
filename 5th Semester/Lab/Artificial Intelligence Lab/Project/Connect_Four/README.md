@@ -155,17 +155,3 @@ python main.py
 - **`ESC`**: Quit the game / close modal
 
 ---
-
-## 🎓 9. Lab Defense & Viva Questions Cheat Sheet
-
-1. **Q: What is the main drawback of standard Minimax?**
-   - *A:* High computational complexity ($O(b^d)$). In Connect Four ($b=7$), depth 6 requires exploring hundreds of thousands of game states, causing visible lag.
-
-2. **Q: Does Alpha-Beta Pruning ever pick a worse move than Minimax?**
-   - *A:* No. Alpha-Beta is mathematically proven to produce the exact same result as Minimax because it only skips branches that are guaranteed to have no effect on the final outcome.
-
-3. **Q: Why does move ordering matter in Alpha-Beta?**
-   - *A:* If best moves are examined first, $\alpha$ rises and $\beta$ drops rapidly, causing cutoffs earlier in the search tree. Center-first ordering achieves this effectively in Connect Four.
-
-4. **Q: Why is the Human 3-in-a-row penalty (-120) larger than the AI 3-in-a-row bonus (+100)?**
-   - *A:* A higher negative weight enforces a defensive priority, ensuring the AI blocks an immediate human win rather than creating a non-immediate threat.
