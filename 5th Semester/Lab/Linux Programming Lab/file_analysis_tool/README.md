@@ -5,15 +5,17 @@ Helps users analyze and inspect files efficiently using built-in Linux command-l
 
 ---
 
-## 📋 Features (Phase 1)
+## 📋 Features
 
 | # | Feature | Linux Command | What It Does |
 |---|---------|--------------|--------------|
 | 1 | **Identify File Type** | `file` | Detects the real file type, MIME type, and character encoding |
 | 2 | **File Info & Permissions** | `ls -lh`, `stat` | Shows permissions, owner, size, and all timestamps |
 | 3 | **Extract Readable Strings** | `strings` | Pulls out human-readable text from any file |
-| 4 | **Change Loaded File** | — | Switch to a different file without restarting the tool |
-| 5 | **Exit** | — | Cleanly exits the program |
+| 4 | **Calculate Hash** | `sha256sum`, `md5sum`, `sha1sum` | Generates SHA-256, MD5, and SHA-1 fingerprints of the file |
+| 5 | **Search Text Pattern** | `grep` | Searches inside a file with 4 modes (normal, case-insensitive, line numbers, count) |
+| 6 | **Change Loaded File** | — | Switch to a different file without restarting the tool |
+| 7 | **Exit** | — | Cleanly exits the program |
 
 ---
 
@@ -22,9 +24,10 @@ Helps users analyze and inspect files efficiently using built-in Linux command-l
 - **File Memory** — Load a file once and reuse it across all features without retyping the path
 - **Smart Prompts** — Shows your current directory and a path example when asking for a file
 - **Permission Breakdown** — Explains what each part of `-rwxr-xr--` means in plain English
+- **Multiple Hash Algorithms** — SHA-256, MD5, and SHA-1 shown together for comparison
+- **4 Search Modes** — Normal, case-insensitive, line numbers, count-only
 - **Colored Output** — Color-coded terminal output for easy reading
 - **Input Validation** — Checks if the file exists before running any command
-- **Strings Sub-menu** — View all strings, first 20, or search for a keyword inside them
 
 ---
 
@@ -82,8 +85,10 @@ chmod +x file_tool.sh
   ║   1.  Identify File Type                     ║
   ║   2.  Display File Info & Permissions        ║
   ║   3.  Extract Readable Strings               ║
-  ║   4.  Change Loaded File                     ║
-  ║   5.  Exit                                   ║
+  ║   4.  Calculate Hash                         ║
+  ║   5.  Search Text Pattern                    ║
+  ║   6.  Change Loaded File                     ║
+  ║   7.  Exit                                   ║
   ║                                              ║
   ╚══════════════════════════════════════════════╝
 
@@ -119,10 +124,6 @@ chmod +x file_tool.sh
 
 | Feature | Tool / Algorithm |
 |---------|-----------------|
-| SHA-256 Hash | `sha256sum` |
-| Search Text Pattern | `grep` |
-| MD5 Hash | `md5sum` |
-| SHA-512 Hash | `sha512sum` |
 | AES Encryption | `openssl aes-256-cbc` |
 | DES Encryption | `openssl des` |
 
