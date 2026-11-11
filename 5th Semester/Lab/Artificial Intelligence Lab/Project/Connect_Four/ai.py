@@ -1,8 +1,3 @@
-"""
-ai.py - Minimax and Alpha-Beta Pruning Algorithm.
-Designed to be simple, well-structured, and easy to explain.
-"""
-
 import time
 import random
 from utils import ROWS, COLS, EMPTY, HUMAN, AI
