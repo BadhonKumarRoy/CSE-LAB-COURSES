@@ -54,24 +54,20 @@ file_analysis_tool/
   sudo apt install binutils -y      # Kali / Ubuntu / Debian
   sudo yum install binutils -y      # Fedora / RHEL
   ```
-- All other tools (`file`, `stat`, `ls`, `grep`) are built into Linux — no install needed
+- All other tools (`file`, `stat`, `ls`, `grep`, `sha256sum`, `md5sum`, `sha1sum`) are built into Linux — no install needed
 
 ---
 
-### Step 1 — Open a terminal and navigate to the project folder
-```bash
-cd ~/Desktop/file_analysis_tool
-```
+## ⚡ Quick Start
 
-### Step 2 — Make the script executable *(one time only)*
 ```bash
+cd ~/Desktop
+cd file_analysis_tool
 chmod +x file_tool.sh
-```
-
-### Step 3 — Run the tool
-```bash
 ./file_tool.sh
 ```
+
+> `chmod +x` is only needed once to make the script executable.
 
 ---
 
@@ -92,7 +88,7 @@ chmod +x file_tool.sh
   ║                                              ║
   ╚══════════════════════════════════════════════╝
 
-  Loaded File : /home/kali/Desktop/sample_files/sample.txt
+  Loaded File : /home/kali/Desktop/file_analysis_tool/sample_files/sample.txt
 ```
 
 ---
@@ -106,7 +102,7 @@ chmod +x file_tool.sh
   /image.png                          ❌ Wrong (starts from system root)
   ```
 - After loading a file, just **press Enter** when prompted to reuse it for the next feature
-- Use **Option 4** anytime you want to switch to a different file
+- Use **Option 6** anytime you want to switch to a different file
 - Test the tool using the included sample files in `sample_files/`
 
 ---
@@ -115,8 +111,8 @@ chmod +x file_tool.sh
 
 | File | Type | Best for testing |
 |------|------|-----------------|
-| `sample.txt` | Plain ASCII text | All 3 features — gives clean, readable output |
-| `sample_script.sh` | Bash shell script | Feature 1 shows it as "shell script" not just "text" |
+| `sample.txt` | Plain ASCII text | All 5 features — gives clean, readable output |
+| `sample_script.sh` | Bash shell script | Feature 1 identifies it as "shell script" not just "text" |
 
 ---
 
@@ -131,18 +127,5 @@ chmod +x file_tool.sh
 
 ## 👤 Author
 
-**Linux Programming Lab Project**
-Built with Bash scripting — using only built-in Linux utilities.
-
----
-
-## ⚡ Quick Start Commands (Copy & Paste)
-
-Exact commands to get the tool running from scratch on Kali Linux:
-
-```bash
-cd ~/Desktop
-cd file_analysis_tool
-chmod +x file_tool.sh
-./file_tool.sh
-```
+**Badhon Kumar Roy**
+Linux Programming Lab — Bash Scripting Project
